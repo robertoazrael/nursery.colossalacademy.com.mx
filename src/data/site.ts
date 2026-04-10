@@ -7,7 +7,7 @@ export const sharedSiteMeta = {
   address: "Av Remigio Aguilar 247, Miguel Alemán, 97148 Mérida, Yuc.",
   instagram: "https://www.instagram.com/colossalkids_merida/",
   facebook: "https://www.facebook.com/profile.php?id=61556652131900",
-  youtubeVideoId: "REpbOFo4MJY",
+  youtubeVideoId: "XpBfd3zytEA",
   mapEmbed:
     "https://www.google.com/maps?q=Av+Remigio+Aguilar+247,+Miguel+Alem%C3%A1n,+97148+M%C3%A9rida,+Yuc.&z=16&output=embed",
   logo: "132d57a1c7e924e9346f904c843261456479ccf7.png",
