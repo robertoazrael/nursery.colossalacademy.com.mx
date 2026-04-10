@@ -1,0 +1,39 @@
+---
+import type { SiteContent } from "../data/site";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section id="reviews" class="bg-white py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="section-kicker">{content.testimonials.kicker}</p>
+      <h2 class="section-title">{content.testimonials.title}</h2>
+      <p class="section-copy">{content.testimonials.copy}</p>
+    </div>
+
+    <div class="mt-14 flex snap-x gap-6 overflow-x-auto pb-4">
+      {content.testimonials.items.map((testimonial) => (
+        <article class="min-w-[300px] snap-start rounded-[1.8rem] border border-brand-sky/10 bg-gradient-to-br from-white to-brand-mist p-8 shadow-sm sm:min-w-[360px] lg:min-w-[380px]">
+          <div class="flex items-center gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-lilac to-brand-sky font-bold text-white">
+              {testimonial.initials}
+            </div>
+            <div>
+              <p class="font-bold text-slate-900">{testimonial.name}</p>
+              <p class="text-sm text-slate-500">{content.testimonials.reviewVerified}</p>
+            </div>
+          </div>
+          <div class="mt-5 flex gap-1 text-brand-mint">
+            <span>★★★★★</span>
+          </div>
+          <p class="mt-5 leading-7 text-slate-700">{testimonial.quote}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

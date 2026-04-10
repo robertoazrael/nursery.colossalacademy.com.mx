@@ -1,0 +1,8 @@
+---
+import LandingPage from "../components/LandingPage.astro";
+import { getSiteContent } from "../data/site";
+
+const content = getSiteContent("es");
+---
+
+<LandingPage content={content} />

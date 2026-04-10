@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(109, 103, 200, 0.1), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(32, 187, 150, 0.1), transparent 20%),
+      #fdfcfb;
+  }
+
+  ::selection {
+    background: rgba(87, 141, 175, 0.18);
+  }
+}
+
+@layer components {
+  .section-kicker {
+    @apply inline-flex rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-[0.22em] text-brand-lilac shadow-sm;
+  }
+
+  .section-title {
+    @apply mt-5 text-4xl font-extrabold text-slate-900 md:text-5xl;
+  }
+
+  .section-copy {
+    @apply mx-auto mt-4 max-w-3xl text-lg leading-8 text-slate-600;
+  }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(109, 103, 200, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109, 103, 200, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
