@@ -1,0 +1,52 @@
+---
+import { sharedSiteMeta, type SiteContent } from "../data/site";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<footer class="border-t border-slate-200 bg-white">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
+    <div>
+      <img src="/images/132d57a1c7e924e9346f904c843261456479ccf7.png" alt="Colossal Academy Kids" class="h-12 w-auto" />
+      <p class="mt-4 text-sm leading-7 text-slate-600">
+        {content.footer.blurb}
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-bold text-brand-lilac">{content.footer.contact}</h3>
+      <div class="mt-4 space-y-3 text-sm text-slate-600">
+        <p>{sharedSiteMeta.address}</p>
+        <a href={`tel:${sharedSiteMeta.phone}`} class="block hover:text-brand-lilac">{sharedSiteMeta.phoneDisplay}</a>
+        <a href={`mailto:${sharedSiteMeta.email}`} class="block hover:text-brand-lilac">{sharedSiteMeta.email}</a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-bold text-brand-lilac">{content.footer.hours}</h3>
+      <div class="mt-4 space-y-3 text-sm text-slate-600">
+        <p><strong>{content.footer.week}</strong><br />8:00 AM - 4:00 PM</p>
+        <p><strong>{content.footer.visits}</strong><br />{content.footer.byAppointment}</p>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-bold text-brand-lilac">{content.footer.follow}</h3>
+      <div class="mt-4 flex gap-4">
+        <a href={sharedSiteMeta.facebook} target="_blank" rel="noreferrer" class="rounded-full bg-brand-mist px-4 py-2 text-sm font-semibold text-brand-lilac">
+          Facebook
+        </a>
+        <a href={sharedSiteMeta.instagram} target="_blank" rel="noreferrer" class="rounded-full bg-brand-mist px-4 py-2 text-sm font-semibold text-brand-lilac">
+          Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-slate-200 px-4 py-5 text-center text-sm text-slate-500">
+    {content.footer.rights}
+  </div>
+</footer>

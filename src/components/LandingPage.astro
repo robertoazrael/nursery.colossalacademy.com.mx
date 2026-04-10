@@ -1,0 +1,47 @@
+---
+import ContactSection from "./ContactSection.astro";
+import FloatingWhatsApp from "./FloatingWhatsApp.astro";
+import FounderSection from "./FounderSection.astro";
+import FaqSection from "./FaqSection.astro";
+import HeroSection from "./HeroSection.astro";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
+import TestimonialsSection from "./TestimonialsSection.astro";
+import ValuesSection from "./ValuesSection.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import type { SiteContent } from "../data/site";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<MainLayout
+  title={content.meta.title}
+  description={content.meta.description}
+  lang={content.meta.lang}
+  path={content.meta.path}
+>
+  <svg width="0" height="0" aria-hidden="true" class="absolute">
+    <defs>
+      <linearGradient id="section-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6d67c8"></stop>
+        <stop offset="100%" stop-color="#20bb96"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <SiteHeader content={content} />
+  <main>
+    <HeroSection content={content} />
+    <ValuesSection content={content} />
+    <FounderSection content={content} />
+    <TestimonialsSection content={content} />
+    <FaqSection content={content} />
+    <ContactSection content={content} />
+  </main>
+  <SiteFooter content={content} />
+  <FloatingWhatsApp content={content} />
+</MainLayout>

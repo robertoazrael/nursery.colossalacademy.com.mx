@@ -1,0 +1,41 @@
+---
+import type { SiteContent } from "../data/site";
+
+interface Props {
+  content: SiteContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section id="founder" class="bg-gradient-to-b from-white to-emerald-50 py-20">
+  <div class="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+    <div class="relative">
+      <div class="overflow-hidden rounded-[2rem] shadow-soft">
+        <img src={`/images/${content.founder.image}`} alt={content.founder.name} class="w-full object-cover" />
+      </div>
+      <div class="absolute -bottom-8 -right-6 h-40 w-40 rounded-full bg-brand-sky/20 blur-3xl"></div>
+    </div>
+
+    <div>
+      <p class="section-kicker text-left">{content.founder.kicker}</p>
+      <h2 class="section-title text-left">{content.founder.title}</h2>
+      <h3 class="mt-4 text-2xl font-extrabold text-brand-mint">{content.founder.name}</h3>
+
+      <div class="mt-8 grid gap-4">
+        {content.founder.highlights.map((item) => (
+          <div class="flex items-start gap-4 rounded-2xl bg-white/80 p-4 shadow-sm ring-1 ring-brand-sky/10">
+            <span class="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-sky to-brand-mint text-lg font-bold text-white">
+              +
+            </span>
+            <p class="text-base leading-7 text-slate-700">{item}</p>
+          </div>
+        ))}
+      </div>
+
+      <blockquote class="mt-8 rounded-[1.75rem] bg-gradient-to-r from-brand-lilac via-brand-sky to-brand-mint p-8 text-lg leading-8 text-white shadow-soft">
+        {content.founder.quote}
+      </blockquote>
+    </div>
+  </div>
+</section>
